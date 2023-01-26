@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //STEP 01
+        var api=new XMLHttpRequest();
+       // STEP 02
+        api.open('GET','https://restcountries.com/v3.1/all')
+        // STEP 03
+        api.send()
+        //STEP 04
+        api.onload=function(){
+            var data=JSON.parse(api.response);
+            console.log(data);
+             // FOr loop for accesing api
+         for(var i=1;i<=api.length;i++){
+            // console.log(data[i]);
+        }
+         // for-In loop 
+         for(var maruthi in data){
+            console.log(maruthi.name)
+         }
+        // for-Of loop 
+        for(var vini of data){
+            console.log(vini.area);      
+          }
+        } 
+       
+    </script>
+</body>
+</html>
